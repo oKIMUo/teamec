@@ -12,7 +12,7 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	private Map<String, Object> session;
 
 	public String execute() {
-		if (!session.containsKey("mCategoryList")) {
+		if (!session.containsKey("mCategoryList") || !session.containsKey("loginId")) {
 			return "sessionError";
 		}
 
@@ -42,4 +42,5 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
 }
